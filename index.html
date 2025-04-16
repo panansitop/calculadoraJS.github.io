@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="calculator">
+        <input type="text" id="num1">
+        <input type="button" value="+" onclick="suma()">
+        <input type="button" value="-" onclick="resta()">
+        <input type="button" value="*" onclick="multiplica()">
+        <input type="button" value="/" onclick="divide()">
+        <input type="text" id="num2">
+        <h1>=</h1>
+        <input type="text" id="res" readonly>
+    </div>
+
+    <script>
+        function suma() {
+            var x = parseFloat(document.getElementById("num1").value);
+            var y = parseFloat(document.getElementById("num2").value);
+            document.getElementById("res").value = x + y;
+        }
+
+        function resta() {
+            var x = parseFloat(document.getElementById("num1").value);
+            var y = parseFloat(document.getElementById("num2").value);
+            var res = x - y;
+            document.getElementById("res").value = (res < 0) ? 0 : res; // Evita valores negativos
+        }
+
+        function multiplica() {
+            var x = parseFloat(document.getElementById("num1").value);
+            var y = parseFloat(document.getElementById("num2").value);
+            document.getElementById("res").value = x * y;
+        }
+
+        function divide() {
+            var x = parseFloat(document.getElementById("num1").value);
+            var y = parseFloat(document.getElementById("num2").value);
+            document.getElementById("res").value = (y !== 0) ? x / y : "Error"; // Evita división entre 0
+        }
+    </script>
+
+</body>
+</html>
